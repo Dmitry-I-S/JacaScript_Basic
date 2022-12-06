@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо попросить пользователя ввести два числа в переменные `a` и `b`.
+Необходимо вывести в консоль один результат из следующих проверок:
+1. Если оба числа в переменных `a` и `b` положительные, вывести разность
+чисел `a` и `b`, а именно, вычесть из переменной `a` значение переменной `b`.
+2. Если оба числа в переменных `a` и `b` отрицательные, вывести произведение
+чисел `a` и `b`.
+3. Если числа в переменных `a` и `b` разных знаков, вывести сумму чисел
+`a` и `b`.
+В остальных случаях программа не должна ничего выводить.
+-->
+<script>
+  "use strict";
+
+  function getResult (a, b) {
+    switch (true) {
+      case (a > 0 && b > 0):
+        return a - b;
+      case (a < 0 && b < 0):
+        return a * b;
+      case (a * b < 0):
+        return a + b;
+    }
+  }
+
+  const a = +prompt("Введите переменную a");
+  let b = +prompt("Введите переменную b");
+
+  console.log(getResult(a, b));
+  
+  console.log(getResult(12, 11));  // 1
+  console.log(getResult(-3, -5));  // 15
+  console.log(getResult(3, -5)); // -2
+  console.log(getResult(0, -1)); // undefined
+
+
+
+</script>
+</body>
+</html>
