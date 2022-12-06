@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Returns summ of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number
+   * @return {number} returns a + b.
+   */
+  function summ (a, b) {
+    return a + b;
+  }
+
+  /**
+   * Returns differens of 2 numbers (greater - smaller)
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number
+   * @return {number} differnce between a and b
+   */
+  function diff (a, b) {
+    return a > b ? a - b : b - a;
+  }
+
+  /**
+   * Returns multiplication of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number.
+   * @return {number} multiplication of a and b
+   */
+  function mult (a, b) {
+    return a * b;
+  }
+
+    /**
+   * Returns division of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number.
+   * @return {number} number a divided by b
+   */
+  function div (a, b) {
+    return a / b;
+  }
+
+  console.log(summ(-2, -6));
+  console.log(summ(3, -4));
+  console.log(diff(2, 6));
+  console.log(diff(3, 1));
+  console.log(diff(5, 5));
+  console.log(diff(-2, -3));
+  console.log(mult(2, 6));
+  console.log(mult(5, 5));
+  console.log(mult(0, -6));
+  console.log(mult(-6, -9));
+  console.log(div(-6, -9));
+  console.log(div(5, 0));
+  console.log(div(0, 1));
+  
+  ﻿
+// 4.html:50 -8
+// 4.html:51 -1
+// 4.html:52 4
+// 4.html:53 2
+// 4.html:54 0
+// 4.html:55 1
+// 4.html:56 12
+// 4.html:57 25
+// 4.html:58 -0
+// 4.html:59 54
+// 4.html:60 0.6666666666666666
+// 4.html:61 Infinity
+// 4.html:62 0
+
+</script>
+</body>
+</html>

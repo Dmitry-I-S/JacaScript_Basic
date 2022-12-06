@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+    /**
+   * Returns summ of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number
+   * @return {number} returns a + b.
+   */
+   function summ (a, b) {
+    return a + b;
+  }
+
+  /**
+   * Returns differens of 2 numbers (greater - smaller)
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number
+   * @return {number} differnce between a and b
+   */
+  function diff (a, b) {
+    return a > b ? a - b : b - a;
+  }
+
+  /**
+   * Returns multiplication of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number.
+   * @return {number} multiplication of a and b
+   */
+  function mult (a, b) {
+    return a * b;
+  }
+
+    /**
+   * Returns division of 2 numbers
+   *
+   * @param {number} a The first number.
+   * @param {number} b The second number.
+   * @return {number} number a divided by b
+   */
+  function div (a, b) {
+    return a / b;
+  }
+  
+  /**
+ * 
+ * @param {number} arg1 The first number.
+ * @param {number} arg2 The second number.
+ * @param {str} operation "+", "-", "*", "/"
+ * @returns {number} math operation with numbers
+ */
+  function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+      case ("+"):
+        return arg1 + arg2;
+      case ("-"):
+        return arg1 - arg2;
+      case ("*"):
+        return arg1 * arg2;
+      case ("/"):
+        return arg1 / arg2;
+      default:
+        return NaN;
+    }
+  }
+
+  console.log(mathOperation(3, 4, "+"));// 5.html:102 7
+  console.log(mathOperation(3, 4, "-"));// 5.html:103 -1
+  console.log(mathOperation(3, 4, "*"));// 5.html:104 12
+  console.log(mathOperation(3, 4, "/"));// 5.html:105 0.75
+  console.log(mathOperation(3, 0, "/"));// 5.html:106 Infinity
+  console.log(mathOperation(3, 4, "x"));// 5.html:107 NaN
+
+
+
+</script>
+</body>
+</html>
