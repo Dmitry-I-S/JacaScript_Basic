@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
+Необходимо создать функцию-конструктор/класс для продукта.
+Названия: `ProductES5` для es5 стиля, `ProductES6` для es6 стиля.
+При создании объекта от функции-конструктора/класса необходимо передавать имя
+и цену товара, эта информация должна быть сохранена в объекте.
+Также у объекта должна быть возможность выполнить метод `make25Discount`, данный
+метод должен уменьшать стоимость продукта на 25%.
+Необходимо продемонстрировать работу с объектом (в свободной форме).
+-->
+<script>
+  "use strict";
+
+    /*ЗАДАНИЕ В ES5*/
+
+  function ProductES5(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  ProductES5.prototype.make25Discount = function()  {
+    this.price = Math.round(this.price * 75) / 100;
+  }
+  
+  let book = new ProductES5("Harry Poter", 99);
+  let ball = new ProductES5("Tennis Ball", 8.9);
+
+  console.log(`Ball price - ${book.price}, Ball name - ${book.name}`);
+  console.log(`Ball price - ${ball.price}, Ball name - ${ball.name}`);
+
+  book.make25Discount();
+  ball.make25Discount();
+
+  console.log(`Ball price with discount - ${book.price}, Ball name - ${book.name}`);
+  console.log(`Ball price with discount- ${ball.price}, Ball name - ${ball.name}`);
+
+  /*ЗАДАНИЕ В ES6*/
+
+  class ProductES6 {
+    constructor(name, price)  {
+      this.name = name;
+      this.price = price;
+    }
+    
+    make25Discount() {
+      this.price = Math.round(this.price * 75) / 100;
+    }
+  }
+
+  
+  let guitar = new ProductES6("Fender", 999.99);
+  let violin = new ProductES6("Yamaha", 88.99);
+  
+  console.log(`Guitar price - ${guitar.price}, Guitar name - ${guitar.name}`);
+  console.log(`violin price - ${violin.price}, violin name - ${violin.name}`);
+
+  guitar.make25Discount();
+  violin.make25Discount();
+
+  console.log(`Guitar price with discount - ${guitar.price}, Guitar name - ${guitar.name}`);
+  console.log(`violin price with discount- ${violin.price}, violin name - ${violin.name}`);
+
+</script>
+</body>
+</html>
